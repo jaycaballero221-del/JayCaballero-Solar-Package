@@ -277,3 +277,52 @@ footer p {
     grid-template-columns: 1fr;
   }
 }
+
+.calculator-box {
+  max-width: 650px;
+  margin: 35px auto;
+  padding: 28px;
+  background: #102641;
+  border: 1px solid #d7a82d;
+  border-radius: 14px;
+  text-align: left;
+}
+
+.calculator-box label {
+  display: block;
+  margin-bottom: 12px;
+  color: #f4ca58;
+  font-weight: bold;
+}
+
+.calculator-box select {
+  width: 100%;
+  padding: 15px;
+  background: #071629;
+  color: white;
+  border: 1px solid #d7a82d;
+  border-radius: 7px;
+  font-size: 16px;
+}
+
+.quote-result {
+  margin-top: 25px;
+  padding: 20px;
+  background: #071629;
+  border-radius: 10px;
+}
+
+.quote-result h3 {
+  color: #f4ca58;
+}
+
+.quote-result p {
+  margin: 12px 0;
+  color: #d4deea;
+}
+
+.quote-note {
+  font-size: 13px;
+  color: #f4ca58 !important;
+  margin: 20px 0 !important;
+}
