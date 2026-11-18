@@ -4,20 +4,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080f1c">
-<title>JS Solar Installation and Internet Services</title>
+<meta name="theme-color" content="#071629">
+<meta name="description" content="JS Solar Installation and Internet Services. Premium solar power solutions for homes and businesses.">
+<title>JS Solar | Installation and Internet Services</title>
 
 <style>
 :root {
-  --bg: #080f1c;
-  --section: #0d1929;
-  --card: #14243a;
-  --card2: #192d46;
-  --gold: #d8b45c;
-  --gold-light: #f1d58c;
-  --white: #f5f6f8;
-  --muted: #aab5c4;
-  --border: #263b55;
+  --navy: #071629;
+  --navy-light: #102943;
+  --gold: #e0b64f;
+  --gold-light: #f3d98f;
+  --white: #f7f8fa;
+  --muted: #bac5d2;
+  --line: rgba(224,182,79,.35);
 }
 
 * {
@@ -31,15 +30,15 @@ html {
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background: var(--bg);
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--navy);
   color: var(--white);
   line-height: 1.6;
 }
 
 .container {
-  width: 92%;
-  max-width: 1150px;
+  width: 90%;
+  max-width: 1180px;
   margin: auto;
 }
 
@@ -50,8 +49,8 @@ a {
 /* HEADER */
 
 header {
-  background: #060c16;
-  border-bottom: 1px solid var(--border);
+  background: rgba(5,15,29,.97);
+  border-bottom: 1px solid var(--line);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -60,30 +59,42 @@ header {
 .nav {
   min-height: 76px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   gap: 20px;
 }
 
-.logo {
-  color: var(--gold-light);
-  font-size: 22px;
-  font-weight: 800;
+.brand {
+  color: var(--gold);
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  line-height: 1.2;
+}
+
+.brand small {
+  display: block;
+  color: var(--white);
+  font-size: 10px;
+  font-weight: normal;
   letter-spacing: 1px;
 }
 
 .nav-links {
   display: flex;
-  gap: 24px;
+  align-items: center;
+  gap: 28px;
 }
 
 .nav-links a {
   color: var(--white);
   font-size: 14px;
   font-weight: bold;
+  transition: .2s;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
   color: var(--gold);
 }
 
@@ -91,91 +102,106 @@ header {
 
 .btn {
   display: inline-block;
+  padding: 13px 25px;
   background: var(--gold);
-  color: #101827;
-  border: 1px solid var(--gold);
-  border-radius: 6px;
-  padding: 12px 21px;
+  color: #09172a;
   font-size: 13px;
   font-weight: 800;
+  border-radius: 5px;
   text-align: center;
-  cursor: pointer;
-  transition: 0.2s;
+  transition: .2s;
 }
 
 .btn:hover {
   background: var(--gold-light);
-  border-color: var(--gold-light);
+  transform: translateY(-2px);
 }
 
 .btn-outline {
   background: transparent;
   color: var(--gold-light);
+  border: 1px solid var(--gold);
 }
 
 .btn-outline:hover {
   background: var(--gold);
-  color: #101827;
+  color: var(--navy);
 }
 
 /* HERO */
 
 .hero {
+  min-height: 390px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
   background:
-    radial-gradient(ellipse at top right, #1b3551 0%, transparent 55%),
-    linear-gradient(135deg, #080f1c, #10243b);
-  text-align: center;
-  padding: 105px 15px;
+    linear-gradient(
+      90deg,
+      rgba(5,17,33,.98) 0%,
+      rgba(5,17,33,.88) 43%,
+      rgba(5,17,33,.25) 100%
+    ),
+    url("https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=2000&q=85")
+    center 55% / cover no-repeat;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 75px 0;
+  max-width: 650px;
 }
 
 .hero-tag {
   color: var(--gold);
   font-size: 12px;
   font-weight: bold;
-  letter-spacing: 4px;
-  margin-bottom: 20px;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
 }
 
 .hero h1 {
-  font-size: clamp(34px, 6vw, 56px);
-  line-height: 1.15;
-  margin-bottom: 20px;
+  font-size: clamp(36px, 5vw, 57px);
+  line-height: 1.12;
+  margin-bottom: 18px;
+}
+
+.hero h1 span {
+  color: var(--gold);
 }
 
 .hero p {
-  max-width: 650px;
-  margin: auto;
-  color: var(--muted);
+  color: #e0e6ee;
+  max-width: 540px;
   font-size: 16px;
+  margin-bottom: 25px;
 }
 
-.hero-buttons {
+.hero-actions {
   display: flex;
-  justify-content: center;
-  gap: 12px;
   flex-wrap: wrap;
-  margin-top: 30px;
+  gap: 12px;
 }
 
-/* GENERAL SECTIONS */
+/* SECTION COMMON */
 
 section {
-  padding: 70px 0;
   scroll-margin-top: 80px;
 }
 
-.section-heading {
-  text-align: center;
-  margin-bottom: 38px;
+.section-title {
+  margin-bottom: 24px;
 }
 
-.section-heading h2 {
-  color: var(--gold-light);
-  font-size: 31px;
-  margin-bottom: 8px;
+.section-title h2 {
+  color: var(--gold);
+  font-size: 29px;
+  margin-bottom: 4px;
 }
 
-.section-heading p {
+.section-title p {
   color: var(--muted);
   font-size: 14px;
 }
@@ -183,160 +209,169 @@ section {
 /* PACKAGES */
 
 .packages-section {
-  background: var(--section);
+  padding: 45px 0 40px;
+  background: #091b30;
 }
 
-.packages {
+.package-list {
+  width: 100%;
+}
+
+.package-row {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
+  grid-template-columns: 190px 170px 1fr;
+  align-items: center;
+  gap: 22px;
+  padding: 15px 10px;
+  border-bottom: 1px solid var(--line);
 }
 
-.package-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 25px 20px;
-  display: flex;
-  flex-direction: column;
-  transition: 0.2s;
+.package-row:last-child {
+  border-bottom: 0;
 }
 
-.package-card:hover {
-  border-color: var(--gold);
-  transform: translateY(-4px);
-}
-
-.package-card.featured {
-  border: 1px solid var(--gold);
-}
-
-.package-card h3 {
-  color: var(--gold-light);
-  font-size: 21px;
-}
-
-.price {
+.package-name {
   color: var(--gold);
-  font-size: 28px;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.package-price {
+  color: var(--white);
+  font-size: 23px;
   font-weight: 800;
-  margin: 12px 0 18px;
 }
 
-.package-card ul {
-  list-style: none;
-  flex: 1;
-}
-
-.package-card li {
-  color: #d5dce6;
-  font-size: 13px;
-  padding: 9px 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.package-card li::before {
-  content: "✓ ";
-  color: var(--gold);
-  font-weight: bold;
-}
-
-/* SERVICES */
-
-.services-section {
-  background: var(--bg);
-}
-
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-
-.service-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 9px;
-  padding: 23px;
-}
-
-.service-card h3 {
-  color: var(--gold-light);
-  font-size: 16px;
-  margin-bottom: 8px;
-}
-
-.service-card p {
+.package-details {
   color: var(--muted);
   font-size: 13px;
+  line-height: 1.8;
 }
 
-/* CONTACT INFORMATION */
+/* SERVICES AND CONTACT */
 
-.contact-section {
-  background: var(--section);
+.info-section {
+  padding: 45px 0;
+  background: var(--navy);
 }
 
-.contact-box {
-  max-width: 750px;
-  margin: auto;
-  text-align: center;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 35px 25px;
+.info-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 55px;
 }
 
-.contact-box h3 {
-  color: var(--gold-light);
-  font-size: 23px;
-  margin-bottom: 15px;
+.services-list {
+  list-style: none;
 }
 
-.contact-box p {
+.services-list li {
   color: var(--muted);
   font-size: 14px;
-  margin-bottom: 8px;
+  padding: 5px 0;
+}
+
+.services-list li::before {
+  content: "✓";
+  color: var(--gold);
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.services-list strong {
+  color: var(--white);
+}
+
+.contact-info {
+  border-left: 1px solid var(--line);
+  padding-left: 45px;
+}
+
+.contact-info h3 {
+  color: var(--gold);
+  font-size: 23px;
+  margin-bottom: 12px;
+}
+
+.contact-info p {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 7px 0;
+}
+
+.contact-info .business-name {
+  color: var(--white);
+  font-weight: bold;
+  margin-bottom: 17px;
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
 }
 
 /* FOOTER */
 
 footer {
-  background: #050a12;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--line);
+  background: #050e1b;
   text-align: center;
-  padding: 25px 15px;
+  padding: 20px 12px;
+}
+
+footer p {
   color: var(--muted);
   font-size: 12px;
 }
 
 footer strong {
-  color: var(--gold-light);
-  font-size: 15px;
+  color: var(--gold);
+  font-size: 14px;
 }
 
 /* MOBILE */
 
-@media (max-width: 950px) {
-  .packages {
-    grid-template-columns: repeat(2, 1fr);
+@media(max-width: 800px) {
+  .package-row {
+    grid-template-columns: 145px 145px 1fr;
+    gap: 12px;
   }
 
-  .service-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .package-name {
+    font-size: 18px;
+  }
+
+  .package-price {
+    font-size: 19px;
+  }
+
+  .info-grid {
+    gap: 30px;
+  }
+
+  .contact-info {
+    padding-left: 25px;
   }
 }
 
-@media (max-width: 600px) {
+@media(max-width: 600px) {
   .nav {
     flex-direction: column;
-    padding: 15px 0;
+    justify-content: center;
+    padding: 13px 0;
+    gap: 12px;
+  }
+
+  .brand {
+    text-align: center;
   }
 
   .nav-links {
     justify-content: center;
-    gap: 16px;
     flex-wrap: wrap;
+    gap: 18px;
   }
 
   .nav-links a {
@@ -344,24 +379,66 @@ footer strong {
   }
 
   .hero {
-    padding: 75px 12px;
+    min-height: 380px;
+    background-position: 58% center;
   }
 
-  section {
-    padding: 50px 0;
+  .hero-content {
+    padding: 65px 0;
   }
 
-  .section-heading h2 {
-    font-size: 26px;
+  .hero-tag {
+    font-size: 10px;
+    letter-spacing: 2px;
   }
 
-  .packages,
-  .service-grid {
+  .hero p {
+    font-size: 14px;
+  }
+
+  .hero-actions .btn {
+    padding: 12px 17px;
+  }
+
+  .packages-section,
+  .info-section {
+    padding: 35px 0;
+  }
+
+  .section-title h2 {
+    font-size: 25px;
+  }
+
+  .package-row {
+    grid-template-columns: 1fr auto;
+    gap: 3px 10px;
+    padding: 15px 0;
+  }
+
+  .package-name {
+    font-size: 19px;
+  }
+
+  .package-price {
+    font-size: 20px;
+    text-align: right;
+  }
+
+  .package-details {
+    grid-column: 1 / -1;
+    font-size: 13px;
+    margin-top: 5px;
+  }
+
+  .info-grid {
     grid-template-columns: 1fr;
+    gap: 30px;
   }
 
-  .package-card {
-    padding: 24px;
+  .contact-info {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    padding: 25px 0 0;
   }
 }
 </style>
@@ -369,9 +446,15 @@ footer strong {
 
 <body>
 
+<!-- HEADER -->
+
 <header>
   <div class="container nav">
-    <a href="#home" class="logo">JS SOLAR</a>
+
+    <a href="#home" class="brand">
+      JS SOLAR
+      <small>INSTALLATION AND INTERNET SERVICES</small>
+    </a>
 
     <nav class="nav-links">
       <a href="#home">Home</a>
@@ -379,32 +462,43 @@ footer strong {
       <a href="#services">Services</a>
       <a href="#contact">Contact</a>
     </nav>
+
   </div>
 </header>
 
 <main>
 
-<!-- HOME -->
+<!-- HERO -->
 
 <section class="hero" id="home">
   <div class="container">
+    <div class="hero-content">
 
-    <div class="hero-tag">
-      POWER YOUR HOME. POWER YOUR FUTURE.
+      <div class="hero-tag">
+        POWER YOUR HOME. POWER YOUR FUTURE.
+      </div>
+
+      <h1>
+        Reliable Solar Energy
+        <span>Solutions</span>
+      </h1>
+
+      <p>
+        Quality solar power solutions for homes and businesses.
+        Choose the right solar package for your energy needs.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#packages" class="btn">
+          VIEW SOLAR PACKAGES
+        </a>
+
+        <a href="#services" class="btn btn-outline">
+          OUR SERVICES
+        </a>
+      </div>
+
     </div>
-
-    <h1>Reliable Solar Energy<br>Solutions</h1>
-
-    <p>
-      Quality solar power solutions for homes and businesses.
-      Choose the right solar package for your energy needs.
-    </p>
-
-    <div class="hero-buttons">
-      <a href="#packages" class="btn">VIEW PACKAGES</a>
-      <a href="#services" class="btn btn-outline">OUR SERVICES</a>
-    </div>
-
   </div>
 </section>
 
@@ -413,137 +507,105 @@ footer strong {
 <section class="packages-section" id="packages">
   <div class="container">
 
-    <div class="section-heading">
+    <div class="section-title">
       <h2>Our Solar Packages</h2>
       <p>Choose the right solar system for your needs.</p>
     </div>
 
-    <div class="packages">
+    <div class="package-list">
 
-      <article class="package-card">
-        <h3>BASIC</h3>
-        <div class="price">₱180,000</div>
-        <ul>
-          <li>1 × Solis 6KW Hybrid Inverter</li>
-          <li>1 × Dyness 100Ah LiFePO4 Battery</li>
-          <li>6 × 680W Solar Panels</li>
-          <li>4.08kWp Panel Capacity</li>
-        </ul>
-      </article>
-
-      <article class="package-card">
-        <h3>STANDARD</h3>
-        <div class="price">₱250,000</div>
-        <ul>
-          <li>1 × Solis 6KW Hybrid Inverter</li>
-          <li>2 × Dyness 100Ah LiFePO4 Batteries</li>
-          <li>6 × 680W Solar Panels</li>
-          <li>4.08kWp Panel Capacity</li>
-        </ul>
-      </article>
-
-      <article class="package-card featured">
-        <h3>PREMIUM</h3>
-        <div class="price">₱350,000</div>
-        <ul>
-          <li>1 × Solis 10KW Hybrid Inverter</li>
-          <li>1 × Dyness 314Ah LiFePO4 Battery</li>
-          <li>12 × 680W Solar Panels</li>
-          <li>8.16kWp Panel Capacity</li>
-        </ul>
-      </article>
-
-      <article class="package-card">
-        <h3>ULTIMATE</h3>
-        <div class="price">₱550,000</div>
-        <ul>
-          <li>1 × Solis 12KW Hybrid Inverter</li>
-          <li>2 × Dyness 314Ah LiFePO4 Batteries</li>
-          <li>16 × 625W Solar Panels</li>
-          <li>10kWp Panel Capacity</li>
-        </ul>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-
-<section class="services-section" id="services">
-  <div class="container">
-
-    <div class="section-heading">
-      <h2>Services & Inclusions</h2>
-      <p>Our solar package services and inclusions.</p>
-    </div>
-
-    <div class="service-grid">
-
-      <div class="service-card">
-        <h3>Solar Materials</h3>
-        <p>Complete solar materials and accessories.</p>
+      <div class="package-row">
+        <div class="package-name">BASIC</div>
+        <div class="package-price">₱180,000</div>
+        <div class="package-details">
+          1 × Solis 6KW Hybrid Inverter<br>
+          1 × Dyness 100Ah LiFePO4 Battery<br>
+          6 × 680W Solar Panels | 4.08kWp Panel Capacity
+        </div>
       </div>
 
-      <div class="service-card">
-        <h3>Mounting Structure</h3>
-        <p>Roof or ground mounting structure.</p>
+      <div class="package-row">
+        <div class="package-name">STANDARD</div>
+        <div class="package-price">₱250,000</div>
+        <div class="package-details">
+          1 × Solis 6KW Hybrid Inverter<br>
+          2 × Dyness 100Ah LiFePO4 Batteries<br>
+          6 × 680W Solar Panels | 4.08kWp Panel Capacity
+        </div>
       </div>
 
-      <div class="service-card">
-        <h3>Electrical Protection</h3>
-        <p>Cables, breakers and protection devices.</p>
+      <div class="package-row">
+        <div class="package-name">PREMIUM</div>
+        <div class="package-price">₱350,000</div>
+        <div class="package-details">
+          1 × Solis 10KW Hybrid Inverter<br>
+          1 × Dyness 314Ah LiFePO4 Battery<br>
+          12 × 680W Solar Panels | 8.16kWp Panel Capacity
+        </div>
       </div>
 
-      <div class="service-card">
-        <h3>Installation</h3>
-        <p>Labor and professional installation.</p>
-      </div>
-
-      <div class="service-card">
-        <h3>System Testing</h3>
-        <p>System testing and commissioning.</p>
-      </div>
-
-      <div class="service-card">
-        <h3>Warranty</h3>
-        <p>Supplier warranty.</p>
-      </div>
-
-      <div class="service-card">
-        <h3>Site Assessment</h3>
-        <p>Free site assessment.</p>
+      <div class="package-row">
+        <div class="package-name">ULTIMATE</div>
+        <div class="package-price">₱550,000</div>
+        <div class="package-details">
+          1 × Solis 12KW Hybrid Inverter<br>
+          2 × Dyness 314Ah LiFePO4 Batteries<br>
+          16 × 625W Solar Panels | 10kWp Panel Capacity
+        </div>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- CONTACT INFORMATION -->
+<!-- SERVICES AND CONTACT -->
 
-<section class="contact-section" id="contact">
-  <div class="container">
+<section class="info-section">
+  <div class="container info-grid">
 
-    <div class="section-heading">
-      <h2>Contact Information</h2>
-      <p>Connect with JS Solar Installation and Internet Services.</p>
+    <div id="services">
+      <div class="section-title">
+        <h2>Services & Inclusions</h2>
+        <p>Our solar package services and inclusions.</p>
+      </div>
+
+      <ul class="services-list">
+        <li><strong>Solar Materials</strong> – Complete solar materials and accessories.</li>
+        <li><strong>Mounting Structure</strong> – Roof or ground mounting structure.</li>
+        <li><strong>Electrical Protection</strong> – Cables, breakers and protection devices.</li>
+        <li><strong>Professional Installation</strong> – Labor and professional installation.</li>
+        <li><strong>System Testing</strong> – System testing and commissioning.</li>
+        <li><strong>Warranty</strong> – Supplier warranty.</li>
+        <li><strong>Free Site Assessment</strong> – Free site assessment.</li>
+      </ul>
     </div>
 
-    <div class="contact-box">
-      <h3>JS Solar Installation and Internet Services</h3>
+    <div class="contact-info" id="contact">
+      <h3>Contact Information</h3>
+
+      <p class="business-name">
+        JS Solar Installation and Internet Services
+      </p>
 
       <p>Solar Installation</p>
       <p>Hybrid Solar Systems</p>
       <p>Residential and Business Solar Solutions</p>
 
-      <a
-        href="https://www.facebook.com/share/19XsacQLH6/"
-        class="btn"
-        target="_blank"
-        rel="noopener"
-        style="margin-top:20px;">
-        VISIT FACEBOOK PAGE
-      </a>
+      <div class="contact-actions">
+        <a
+          href="https://www.facebook.com/share/19XsacQLH6/"
+          class="btn"
+          target="_blank"
+          rel="noopener">
+          VISIT FACEBOOK
+        </a>
+
+        <a
+          href="mailto:jaycaballero221@gmail.com"
+          class="btn btn-outline">
+          EMAIL US
+        </a>
+      </div>
     </div>
 
   </div>
@@ -551,10 +613,18 @@ footer strong {
 
 </main>
 
+<!-- FOOTER -->
+
 <footer>
-  <p><strong>JS Solar Installation and Internet Services</strong></p>
-  <p>Solar Energy Solutions for Homes and Businesses</p>
-  <p style="margin-top:8px;">
+  <p>
+    <strong>JS Solar Installation and Internet Services</strong>
+  </p>
+
+  <p>
+    Solar Energy Solutions for Homes and Businesses
+  </p>
+
+  <p>
     © <span id="year"></span> All Rights Reserved.
   </p>
 </footer>
