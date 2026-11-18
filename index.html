@@ -2,372 +2,457 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#08172c">
-  <meta name="description" content="JS Solar Installation and Internet Services - Solar packages, installation and quotation inquiries.">
-  <title>JS Solar Installation and Internet Services</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b1b32">
+<meta name="description" content="JS Solar Installation and Internet Services - Solar packages and professional installation.">
+<title>JS Solar Installation and Internet Services</title>
 
-  <style>
-    :root {
-      --navy: #08172c;
-      --navy-light: #102947;
-      --gold: #d9ad4b;
-      --gold-light: #f5d98b;
-      --white: #ffffff;
-      --light: #f4f6f9;
-      --text: #263448;
-      --muted: #687589;
-    }
+<style>
+:root {
+  --navy: #0b1b32;
+  --navy2: #173552;
+  --gold: #d9b45b;
+  --gold-light: #f0d995;
+  --background: #f3f5f8;
+  --white: #ffffff;
+  --text: #263448;
+  --muted: #718096;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    html {
-      scroll-behavior: smooth;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    body {
-      font-family: Arial, sans-serif;
-      background: var(--light);
-      color: var(--text);
-      line-height: 1.6;
-    }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+}
 
-    a {
-      text-decoration: none;
-    }
+a {
+  text-decoration: none;
+}
 
-    .container {
-      width: min(1120px, 92%);
-      margin: auto;
-    }
+.container {
+  width: 92%;
+  max-width: 1150px;
+  margin: auto;
+}
 
-    header {
-      background: var(--navy);
-      color: white;
-      padding: 16px 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 2px solid var(--gold);
-    }
+/* HEADER */
 
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
+header {
+  background: var(--navy);
+  border-bottom: 3px solid var(--gold);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-    .logo {
-      color: var(--gold-light);
-      font-size: 19px;
-      font-weight: 800;
-    }
+.nav {
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
 
-    .nav-links {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--gold-light);
+  white-space: nowrap;
+}
 
-    .nav-links a {
-      color: white;
-      font-size: 13px;
-      font-weight: bold;
-    }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
 
-    .nav-links a:hover {
-      color: var(--gold-light);
-    }
+.nav-links a {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+}
 
-    .hero {
-      background: linear-gradient(135deg, #08172c, #153b60);
-      color: white;
-      padding: 90px 0;
-      text-align: center;
-    }
+.nav-links a:hover {
+  color: var(--gold-light);
+}
 
-    .hero .tag {
-      color: var(--gold-light);
-      letter-spacing: 3px;
-      font-size: 12px;
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
+/* BUTTONS */
 
-    .hero h1 {
-      font-size: clamp(32px, 6vw, 54px);
-      line-height: 1.15;
-      margin-bottom: 18px;
-    }
+.btn {
+  display: inline-block;
+  padding: 14px 23px;
+  background: var(--gold);
+  color: var(--navy);
+  border: 0;
+  border-radius: 7px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+  text-align: center;
+}
 
-    .hero p {
-      max-width: 650px;
-      margin: 0 auto 28px;
-      color: #e1e8f1;
-    }
+.btn:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+}
 
-    .btn {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--navy);
-      padding: 13px 23px;
-      border-radius: 6px;
-      font-weight: 800;
-      border: none;
-      cursor: pointer;
-      font-size: 14px;
-      transition: 0.2s;
-    }
+.btn-outline {
+  background: transparent;
+  color: white;
+  border: 1px solid var(--gold);
+}
 
-    .btn:hover {
-      background: var(--gold-light);
-      transform: translateY(-2px);
-    }
+.btn-outline:hover {
+  background: var(--gold);
+  color: var(--navy);
+}
 
-    .btn-outline {
-      background: transparent;
-      color: white;
-      border: 1px solid var(--gold);
-      margin-left: 8px;
-    }
+/* HERO */
 
-    .btn-outline:hover {
-      color: var(--navy);
-    }
+.hero {
+  background: linear-gradient(125deg, var(--navy), #183b5e);
+  color: white;
+  text-align: center;
+  padding: 105px 15px;
+}
 
-    section {
-      padding: 65px 0;
-      scroll-margin-top: 85px;
-    }
+.hero-tag {
+  color: var(--gold-light);
+  letter-spacing: 4px;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 22px;
+}
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 35px;
-    }
+.hero h1 {
+  font-size: clamp(34px, 6vw, 55px);
+  line-height: 1.2;
+  margin-bottom: 22px;
+}
 
-    .section-title h2 {
-      color: var(--navy);
-      font-size: 30px;
-      margin-bottom: 8px;
-    }
+.hero p {
+  max-width: 680px;
+  margin: auto;
+  color: #e0e7f0;
+  font-size: 17px;
+}
 
-    .section-title p {
-      color: var(--muted);
-    }
+.hero-buttons {
+  margin-top: 35px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
 
-    .packages {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
-      gap: 20px;
-    }
+/* SECTIONS */
 
-    .package-card {
-      background: white;
-      border-radius: 12px;
-      padding: 25px 20px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.07);
-      border: 1px solid #e7eaf0;
-      display: flex;
-      flex-direction: column;
-    }
+section {
+  padding: 75px 0;
+  scroll-margin-top: 90px;
+}
 
-    .package-card.featured {
-      border: 2px solid var(--gold);
-    }
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
 
-    .package-card h3 {
-      color: var(--navy);
-      font-size: 21px;
-    }
+.section-title h2 {
+  color: var(--navy);
+  font-size: 34px;
+  margin-bottom: 10px;
+}
 
-    .price {
-      color: #a87919;
-      font-size: 29px;
-      font-weight: 900;
-      margin: 10px 0 15px;
-    }
+.section-title p {
+  color: var(--muted);
+  font-size: 16px;
+}
 
-    .package-card ul {
-      list-style: none;
-      margin-bottom: 22px;
-      flex: 1;
-    }
+/* PACKAGES */
 
-    .package-card li {
-      padding: 7px 0;
-      border-bottom: 1px solid #edf0f4;
-      font-size: 13px;
-    }
+.packages {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
 
-    .package-card li::before {
-      content: "✓ ";
-      color: #b38729;
-      font-weight: bold;
-    }
+.package-card {
+  background: var(--white);
+  border: 1px solid #e7eaf0;
+  border-radius: 15px;
+  padding: 27px 22px;
+  box-shadow: 0 5px 20px rgba(20, 35, 55, 0.06);
+  display: flex;
+  flex-direction: column;
+  transition: 0.2s;
+}
 
-    .package-card .btn {
-      width: 100%;
-      text-align: center;
-    }
+.package-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(20, 35, 55, 0.10);
+}
 
-    .inclusions {
-      background: white;
-    }
+.package-card.featured {
+  border: 2px solid var(--gold);
+}
 
-    .inclusion-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-    }
+.package-card h3 {
+  color: var(--navy);
+  font-size: 23px;
+}
 
-    .inclusion-item {
-      background: var(--light);
-      padding: 22px;
-      border-radius: 9px;
-      border-left: 4px solid var(--gold);
-    }
+.price {
+  color: #a47b28;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 15px 0;
+}
 
-    .inclusion-item h3 {
-      color: var(--navy);
-      font-size: 16px;
-      margin-bottom: 5px;
-    }
+.package-card ul {
+  list-style: none;
+  flex: 1;
+  margin-bottom: 24px;
+}
 
-    .inclusion-item p {
-      font-size: 13px;
-      color: var(--muted);
-    }
+.package-card li {
+  font-size: 13px;
+  padding: 9px 0;
+  border-bottom: 1px solid #edf0f4;
+}
 
-    .contact-wrap {
-      display: grid;
-      grid-template-columns: 1fr 1.3fr;
-      gap: 30px;
-      align-items: start;
-    }
+.package-card li::before {
+  content: "✓ ";
+  color: #b38b37;
+  font-weight: bold;
+}
 
-    .contact-info {
-      background: var(--navy);
-      color: white;
-      padding: 28px;
-      border-radius: 12px;
-    }
+.package-card .btn {
+  width: 100%;
+}
 
-    .contact-info h3 {
-      color: var(--gold-light);
-      margin-bottom: 15px;
-    }
+/* SERVICES */
 
-    .contact-info p {
-      margin: 12px 0;
-      font-size: 14px;
-    }
+.services-section {
+  background: #e9edf2;
+}
 
-    .contact-form {
-      background: white;
-      padding: 28px;
-      border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
-    }
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
 
-    .contact-form h3 {
-      color: var(--navy);
-      margin-bottom: 18px;
-    }
+.service-card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  border-left: 4px solid var(--gold);
+  box-shadow: 0 4px 15px rgba(20, 35, 55, 0.04);
+}
 
-    .form-group {
-      margin-bottom: 15px;
-    }
+.service-card h3 {
+  color: var(--navy);
+  font-size: 17px;
+  margin-bottom: 8px;
+}
 
-    label {
-      display: block;
-      font-size: 13px;
-      font-weight: bold;
-      margin-bottom: 6px;
-    }
+.service-card p {
+  color: var(--muted);
+  font-size: 14px;
+}
 
-    input, select, textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #dce1e8;
-      border-radius: 6px;
-      font: inherit;
-      font-size: 14px;
-      background: white;
-    }
+/* CONTACT */
 
-    textarea {
-      min-height: 100px;
-      resize: vertical;
-    }
+.contact-section {
+  background: var(--background);
+}
 
-    input:focus, select:focus, textarea:focus {
-      outline: 2px solid var(--gold-light);
-      border-color: var(--gold);
-    }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.3fr;
+  gap: 28px;
+  align-items: start;
+}
 
-    .contact-form .btn {
-      width: 100%;
-    }
+.contact-info {
+  background: var(--navy);
+  color: white;
+  padding: 32px;
+  border-radius: 13px;
+}
 
-    .small-note {
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 12px;
-    }
+.contact-info h3 {
+  color: var(--gold-light);
+  font-size: 21px;
+  margin-bottom: 18px;
+}
 
-    footer {
-      background: #050f1e;
-      color: #cbd3df;
-      text-align: center;
-      padding: 25px 12px;
-      font-size: 13px;
-    }
+.contact-info p {
+  color: #e1e7ef;
+  margin-bottom: 13px;
+  font-size: 14px;
+}
 
-    footer strong {
-      color: var(--gold-light);
-    }
+.contact-form {
+  background: white;
+  border-radius: 13px;
+  padding: 30px;
+  box-shadow: 0 5px 20px rgba(20, 35, 55, 0.06);
+}
 
-    @media (max-width: 700px) {
-      .nav {
-        justify-content: center;
-      }
+.contact-form h3 {
+  color: var(--navy);
+  font-size: 23px;
+  margin-bottom: 22px;
+}
 
-      .nav-links {
-        justify-content: center;
-        gap: 13px;
-      }
+.form-group {
+  margin-bottom: 17px;
+}
 
-      .hero {
-        padding: 65px 0;
-      }
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--text);
+  margin-bottom: 7px;
+}
 
-      .btn-outline {
-        margin: 10px 0 0;
-      }
+input, select, textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #dce2e9;
+  border-radius: 7px;
+  font-size: 14px;
+  font-family: inherit;
+  background: #fcfdff;
+  color: var(--text);
+}
 
-      .contact-wrap {
-        grid-template-columns: 1fr;
-      }
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid var(--gold-light);
+  border-color: var(--gold);
+}
 
-      section {
-        padding: 48px 0;
-      }
-    }
-  </style>
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.contact-form button {
+  width: 100%;
+  font-size: 14px;
+}
+
+.form-note {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 13px;
+}
+
+/* FOOTER */
+
+footer {
+  background: #071426;
+  color: #cbd4df;
+  padding: 30px 15px;
+  text-align: center;
+  font-size: 13px;
+}
+
+footer strong {
+  color: var(--gold-light);
+  font-size: 16px;
+}
+
+/* MOBILE */
+
+@media (max-width: 950px) {
+  .packages {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .nav {
+    flex-direction: column;
+    justify-content: center;
+    padding: 16px 0;
+  }
+
+  .nav-links {
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+  }
+
+  .hero {
+    padding: 85px 15px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  section {
+    padding: 55px 0;
+  }
+
+  .section-title h2 {
+    font-size: 28px;
+  }
+
+  .packages {
+    grid-template-columns: 1fr;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form {
+    padding: 23px 18px;
+  }
+
+  .package-card {
+    padding: 25px;
+  }
+}
+</style>
 </head>
 
 <body>
 
+<!-- HEADER -->
+
 <header>
   <div class="container nav">
-    <a class="logo" href="#home">JS SOLAR</a>
+    <a href="#home" class="logo">JS SOLAR</a>
 
     <nav class="nav-links">
       <a href="#home">Home</a>
@@ -380,274 +465,356 @@
 
 <main>
 
-  <section class="hero" id="home">
-    <div class="container">
-      <p class="tag">POWER YOUR HOME. POWER YOUR FUTURE.</p>
-      <h1>Reliable Solar Energy<br>Solutions</h1>
-      <p>
-        Get the right solar power system for your home or business.
-        Explore our solar packages and send us your quotation inquiry.
-      </p>
-      <a class="btn" href="#packages">VIEW SOLAR PACKAGES</a>
-      <a class="btn btn-outline" href="#contact">CONTACT US</a>
+<!-- HOME -->
+
+<section class="hero" id="home">
+  <div class="container">
+
+    <div class="hero-tag">
+      POWER YOUR HOME. POWER YOUR FUTURE.
     </div>
-  </section>
 
-  <section id="packages">
-    <div class="container">
-      <div class="section-title">
-        <h2>Our Solar Packages</h2>
-        <p>Choose the solar package that suits your needs.</p>
-      </div>
+    <h1>Reliable Solar Energy<br>Solutions</h1>
 
-      <div class="packages">
+    <p>
+      Get the right solar power system for your home or business.
+      Explore our solar packages and send us your quotation inquiry.
+    </p>
 
-        <article class="package-card">
-          <h3>BASIC</h3>
-          <div class="price">₱180,000</div>
-          <ul>
-            <li>1 × Solis 6KW Hybrid Inverter</li>
-            <li>1 × Dyness 100Ah LiFePO4 Battery</li>
-            <li>6 × 680W Solar Panels</li>
-            <li>4.08kWp Panel Capacity</li>
-          </ul>
-          <button class="btn package-btn" data-package="BASIC">
-            REQUEST QUOTATION
-          </button>
-        </article>
-
-        <article class="package-card">
-          <h3>STANDARD</h3>
-          <div class="price">₱250,000</div>
-          <ul>
-            <li>1 × Solis 6KW Hybrid Inverter</li>
-            <li>2 × Dyness 100Ah LiFePO4 Batteries</li>
-            <li>6 × 680W Solar Panels</li>
-            <li>4.08kWp Panel Capacity</li>
-          </ul>
-          <button class="btn package-btn" data-package="STANDARD">
-            REQUEST QUOTATION
-          </button>
-        </article>
-
-        <article class="package-card featured">
-          <h3>PREMIUM</h3>
-          <div class="price">₱350,000</div>
-          <ul>
-            <li>1 × Solis 10KW Hybrid Inverter</li>
-            <li>1 × Dyness 314Ah LiFePO4 Battery</li>
-            <li>12 × 680W Solar Panels</li>
-            <li>8.16kWp Panel Capacity</li>
-          </ul>
-          <button class="btn package-btn" data-package="PREMIUM">
-            REQUEST QUOTATION
-          </button>
-        </article>
-
-        <article class="package-card">
-          <h3>ULTIMATE</h3>
-          <div class="price">₱550,000</div>
-          <ul>
-            <li>1 × Solis 12KW Hybrid Inverter</li>
-            <li>2 × Dyness 314Ah LiFePO4 Batteries</li>
-            <li>16 × 625W Solar Panels</li>
-            <li>10kWp Panel Capacity</li>
-          </ul>
-          <button class="btn package-btn" data-package="ULTIMATE">
-            REQUEST QUOTATION
-          </button>
-        </article>
-
-      </div>
+    <div class="hero-buttons">
+      <a href="#packages" class="btn">VIEW SOLAR PACKAGES</a>
+      <a href="#contact" class="btn btn-outline">CONTACT US</a>
     </div>
-  </section>
 
-  <section class="inclusions" id="services">
-    <div class="container">
-      <div class="section-title">
-        <h2>Services & Inclusions</h2>
-        <p>Included in our solar package offerings.</p>
-      </div>
+  </div>
+</section>
 
-      <div class="inclusion-grid">
-        <div class="inclusion-item">
-          <h3>Solar Materials</h3>
-          <p>Complete solar materials and accessories.</p>
-        </div>
+<!-- SOLAR PACKAGES -->
 
-        <div class="inclusion-item">
-          <h3>Mounting Structure</h3>
-          <p>Roof or ground mounting structure.</p>
-        </div>
+<section id="packages">
+  <div class="container">
 
-        <div class="inclusion-item">
-          <h3>Electrical Protection</h3>
-          <p>Cables, breakers and protection devices.</p>
-        </div>
-
-        <div class="inclusion-item">
-          <h3>Professional Installation</h3>
-          <p>Labor and professional installation.</p>
-        </div>
-
-        <div class="inclusion-item">
-          <h3>System Testing</h3>
-          <p>System testing and commissioning.</p>
-        </div>
-
-        <div class="inclusion-item">
-          <h3>Warranty</h3>
-          <p>Supplier warranty.</p>
-        </div>
-
-        <div class="inclusion-item">
-          <h3>Site Assessment</h3>
-          <p>Free site assessment.</p>
-        </div>
-      </div>
+    <div class="section-title">
+      <h2>Our Solar Packages</h2>
+      <p>Choose the solar package that suits your needs.</p>
     </div>
-  </section>
 
-  <section id="contact">
-    <div class="container">
-      <div class="section-title">
-        <h2>Request a Quotation</h2>
-        <p>Send us your details so we can assist you.</p>
+    <div class="packages">
+
+      <article class="package-card">
+        <h3>BASIC</h3>
+        <div class="price">₱180,000</div>
+
+        <ul>
+          <li>1 × Solis 6KW Hybrid Inverter</li>
+          <li>1 × Dyness 100Ah LiFePO4 Battery</li>
+          <li>6 × 680W Solar Panels</li>
+          <li>4.08kWp Panel Capacity</li>
+        </ul>
+
+        <button class="btn package-btn" data-package="BASIC">
+          REQUEST QUOTATION
+        </button>
+      </article>
+
+      <article class="package-card">
+        <h3>STANDARD</h3>
+        <div class="price">₱250,000</div>
+
+        <ul>
+          <li>1 × Solis 6KW Hybrid Inverter</li>
+          <li>2 × Dyness 100Ah LiFePO4 Batteries</li>
+          <li>6 × 680W Solar Panels</li>
+          <li>4.08kWp Panel Capacity</li>
+        </ul>
+
+        <button class="btn package-btn" data-package="STANDARD">
+          REQUEST QUOTATION
+        </button>
+      </article>
+
+      <article class="package-card featured">
+        <h3>PREMIUM</h3>
+        <div class="price">₱350,000</div>
+
+        <ul>
+          <li>1 × Solis 10KW Hybrid Inverter</li>
+          <li>1 × Dyness 314Ah LiFePO4 Battery</li>
+          <li>12 × 680W Solar Panels</li>
+          <li>8.16kWp Panel Capacity</li>
+        </ul>
+
+        <button class="btn package-btn" data-package="PREMIUM">
+          REQUEST QUOTATION
+        </button>
+      </article>
+
+      <article class="package-card">
+        <h3>ULTIMATE</h3>
+        <div class="price">₱550,000</div>
+
+        <ul>
+          <li>1 × Solis 12KW Hybrid Inverter</li>
+          <li>2 × Dyness 314Ah LiFePO4 Batteries</li>
+          <li>16 × 625W Solar Panels</li>
+          <li>10kWp Panel Capacity</li>
+        </ul>
+
+        <button class="btn package-btn" data-package="ULTIMATE">
+          REQUEST QUOTATION
+        </button>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+
+<section class="services-section" id="services">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Services & Inclusions</h2>
+      <p>Included in our solar package offerings.</p>
+    </div>
+
+    <div class="service-grid">
+
+      <div class="service-card">
+        <h3>Solar Materials</h3>
+        <p>Complete solar materials and accessories.</p>
       </div>
 
-      <div class="contact-wrap">
+      <div class="service-card">
+        <h3>Mounting Structure</h3>
+        <p>Roof or ground mounting structure.</p>
+      </div>
 
-        <div class="contact-info">
-          <h3>JS Solar Installation and Internet Services</h3>
-          <p>☀ Solar Installation</p>
-          <p>☀ Hybrid Solar Systems</p>
-          <p>☀ Solar Package Inquiries</p>
-          <p>☀ Residential and Business Solutions</p>
-          <p>Send us your inquiry through our Facebook link.</p>
-          <a class="btn" href="https://www.facebook.com/share/19XsacQLH6/"
-             target="_blank" rel="noopener">
-            OPEN FACEBOOK
-          </a>
+      <div class="service-card">
+        <h3>Electrical Protection</h3>
+        <p>Cables, breakers and protection devices.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Professional Installation</h3>
+        <p>Labor and professional installation.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>System Testing</h3>
+        <p>System testing and commissioning.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Warranty</h3>
+        <p>Supplier warranty.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Free Site Assessment</h3>
+        <p>Free site assessment.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / EMAIL INQUIRY -->
+
+<section class="contact-section" id="contact">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Request a Quotation</h2>
+      <p>Fill out the form and send your inquiry through email.</p>
+    </div>
+
+    <div class="contact-grid">
+
+      <div class="contact-info">
+        <h3>JS Solar Installation and Internet Services</h3>
+
+        <p>☀ Solar Installation</p>
+        <p>☀ Hybrid Solar Systems</p>
+        <p>☀ Residential Solar Packages</p>
+        <p>☀ Business Solar Solutions</p>
+
+        <p style="margin-top:25px;">
+          For inquiries and quotations, please complete the form.
+          We look forward to assisting you.
+        </p>
+      </div>
+
+      <form class="contact-form" id="inquiryForm">
+
+        <h3>Customer Information</h3>
+
+        <div class="form-group">
+          <label for="name">Full Name *</label>
+          <input
+            type="text"
+            id="name"
+            required
+            placeholder="Enter your full name">
         </div>
 
-        <form class="contact-form" id="inquiryForm">
-          <h3>Customer Information</h3>
+        <div class="form-group">
+          <label for="phone">Mobile Number *</label>
+          <input
+            type="tel"
+            id="phone"
+            required
+            placeholder="09XXXXXXXXX">
+        </div>
 
-          <div class="form-group">
-            <label for="name">Full Name *</label>
-            <input type="text" id="name" required placeholder="Enter your full name">
-          </div>
+        <div class="form-group">
+          <label for="address">Complete Address / Location *</label>
+          <textarea
+            id="address"
+            required
+            placeholder="Enter your complete address"></textarea>
+        </div>
 
-          <div class="form-group">
-            <label for="phone">Mobile Number *</label>
-            <input type="tel" id="phone" required placeholder="09XXXXXXXXX">
-          </div>
+        <div class="form-group">
+          <label for="package">Selected Solar Package *</label>
 
-          <div class="form-group">
-            <label for="address">Complete Address / Location *</label>
-            <textarea id="address" required placeholder="Enter your location"></textarea>
-          </div>
+          <select id="package" required>
+            <option value="">Select a solar package</option>
+            <option value="BASIC - ₱180,000">BASIC - ₱180,000</option>
+            <option value="STANDARD - ₱250,000">STANDARD - ₱250,000</option>
+            <option value="PREMIUM - ₱350,000">PREMIUM - ₱350,000</option>
+            <option value="ULTIMATE - ₱550,000">ULTIMATE - ₱550,000</option>
+          </select>
+        </div>
 
-          <div class="form-group">
-            <label for="package">Selected Solar Package *</label>
-            <select id="package" required>
-              <option value="">Select a package</option>
-              <option value="BASIC - ₱180,000">BASIC - ₱180,000</option>
-              <option value="STANDARD - ₱250,000">STANDARD - ₱250,000</option>
-              <option value="PREMIUM - ₱350,000">PREMIUM - ₱350,000</option>
-              <option value="ULTIMATE - ₱550,000">ULTIMATE - ₱550,000</option>
-            </select>
-          </div>
+        <div class="form-group">
+          <label for="requirements">Additional Requirements</label>
+          <textarea
+            id="requirements"
+            placeholder="Optional: Tell us your additional requirements"></textarea>
+        </div>
 
-          <div class="form-group">
-            <label for="requirements">Additional Requirements</label>
-            <textarea id="requirements" placeholder="Optional: Tell us about your requirements"></textarea>
-          </div>
+        <button type="submit" class="btn">
+          SEND INQUIRY VIA EMAIL
+        </button>
 
-          <button type="submit" class="btn">
-            SEND INQUIRY
-          </button>
+        <p class="form-note">
+          Your email app will open with your quotation details ready to send.
+        </p>
 
-          <p class="small-note">
-            Your inquiry will be prepared for you to copy and send through Facebook.
-          </p>
-        </form>
+      </form>
 
-      </div>
     </div>
-  </section>
+  </div>
+</section>
 
 </main>
 
+<!-- FOOTER -->
+
 <footer>
-  <p><strong>JS Solar Installation and Internet Services</strong></p>
+  <p>
+    <strong>JS Solar Installation and Internet Services</strong>
+  </p>
+
   <p>Solar Energy Solutions for Homes and Businesses</p>
-  <p>© <span id="year"></span> All Rights Reserved.</p>
+
+  <p style="margin-top:10px;">
+    © <span id="year"></span> All Rights Reserved.
+  </p>
 </footer>
 
+<!-- JAVASCRIPT -->
+
 <script>
-  const FACEBOOK_LINK = "https://www.facebook.com/share/19XsacQLH6/";
+const BUSINESS_EMAIL = "jaycaballero221@gmail.com";
 
-  document.getElementById("year").textContent =
-    new Date().getFullYear();
+// Current year
+document.getElementById("year").textContent =
+  new Date().getFullYear();
 
-  // Select package automatically when a package button is clicked.
-  document.querySelectorAll(".package-btn").forEach(button => {
-    button.addEventListener("click", () => {
-      const selectedPackage = button.dataset.package;
-      const packageSelect = document.getElementById("package");
+// Package buttons
+document.querySelectorAll(".package-btn").forEach(button => {
 
-      const matchingOption = Array.from(packageSelect.options).find(option =>
-        option.value.startsWith(selectedPackage + " -")
-      );
+  button.addEventListener("click", () => {
 
-      if (matchingOption) {
-        packageSelect.value = matchingOption.value;
-      }
+    const selectedPackage = button.dataset.package;
+    const packageSelect = document.getElementById("package");
 
-      document.getElementById("contact").scrollIntoView({
-        behavior: "smooth"
-      });
-    });
-  });
+    const option = Array.from(packageSelect.options).find(item =>
+      item.value.startsWith(selectedPackage + " -")
+    );
 
-  // Prepare the customer's inquiry.
-  document.getElementById("inquiryForm").addEventListener("submit", async event => {
-    event.preventDefault();
-
-    const name = document.getElementById("name").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const address = document.getElementById("address").value.trim();
-    const selectedPackage = document.getElementById("package").value;
-    const requirements = document.getElementById("requirements").value.trim();
-
-    if (!name || !phone || !address || !selectedPackage) {
-      alert("Please complete all required fields.");
-      return;
+    if (option) {
+      packageSelect.value = option.value;
     }
 
-    const message =
-`SOLAR QUOTATION INQUIRY
+    document.getElementById("contact").scrollIntoView({
+      behavior: "smooth"
+    });
 
-Name: ${name}
+  });
+
+});
+
+// Email inquiry form
+document.getElementById("inquiryForm").addEventListener("submit", event => {
+
+  event.preventDefault();
+
+  const name =
+    document.getElementById("name").value.trim();
+
+  const phone =
+    document.getElementById("phone").value.trim();
+
+  const address =
+    document.getElementById("address").value.trim();
+
+  const selectedPackage =
+    document.getElementById("package").value;
+
+  const requirements =
+    document.getElementById("requirements").value.trim();
+
+  if (!name || !phone || !address || !selectedPackage) {
+    alert("Please complete all required fields.");
+    return;
+  }
+
+  const subject = "Solar Package Quotation Inquiry";
+
+  const message =
+`JS SOLAR INSTALLATION AND INTERNET SERVICES
+SOLAR QUOTATION INQUIRY
+
+CUSTOMER INFORMATION
+
+Full Name: ${name}
 Mobile Number: ${phone}
 Address / Location: ${address}
-Selected Package: ${selectedPackage}
-Additional Requirements: ${requirements || "None"}
 
-I would like to request a quotation. Thank you!`;
+SELECTED SOLAR PACKAGE
 
-    try {
-      await navigator.clipboard.writeText(message);
-      alert("Your inquiry has been copied! Facebook will open next. Paste your inquiry into your message.");
-    } catch (error) {
-      window.prompt("Copy your inquiry message below:", message);
-    }
+${selectedPackage}
 
-    window.open(FACEBOOK_LINK, "_blank", "noopener");
-  });
+ADDITIONAL REQUIREMENTS
+
+${requirements || "None"}
+
+I would like to request a quotation.
+Thank you!`;
+
+  const emailLink =
+    "mailto:" + BUSINESS_EMAIL +
+    "?subject=" + encodeURIComponent(subject) +
+    "&body=" + encodeURIComponent(message);
+
+  window.location.href = emailLink;
+
+});
 </script>
 
 </body>
 </html>
-
