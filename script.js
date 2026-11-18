@@ -1,4 +1,5 @@
 
+
 const solarPackages = {
   basic: {
     name: "BASIC SOLAR PACKAGE",
