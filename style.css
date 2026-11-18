@@ -1,18 +1,279 @@
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background: #f4f6f9;
-    color: #222;
-    text-align: center;
-    padding: 50px 20px;
+  font-family: Arial, sans-serif;
+  background: #071629;
+  color: #ffffff;
+  line-height: 1.6;
 }
 
-h1 {
-    color: #2563eb;
-    font-size: 32px;
+header {
+  background: #061326;
+  padding: 18px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  border-bottom: 2px solid #d7a82d;
 }
 
-p {
-    font-size: 18px;
-    color: #555;
+.logo {
+  font-size: 27px;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.logo span,
+.gold,
+.hero h1 span {
+  color: #e8b93f;
+}
+
+nav {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #e8b93f;
+}
+
+.hero {
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  padding: 70px 8%;
+  background:
+    linear-gradient(90deg, rgba(3,16,34,.97), rgba(3,16,34,.65)),
+    url("https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.tag {
+  color: #e8b93f;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 7vw, 65px);
+  line-height: 1.15;
+  margin: 20px 0;
+}
+
+.hero p {
+  color: #d6deea;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.btn,
+.package-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #f8d56b, #c58b16);
+  color: #101a2b;
+  padding: 13px 24px;
+  border-radius: 7px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.intro,
+.section {
+  padding: 75px 7%;
+  text-align: center;
+}
+
+.intro h2,
+.section h2,
+.contact h2 {
+  font-size: 32px;
+  margin: 12px 0;
+}
+
+.intro p,
+.subtitle {
+  color: #b8c5d6;
+  max-width: 700px;
+  margin: 10px auto;
+}
+
+.package-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+  margin-top: 40px;
+  text-align: left;
+}
+
+.package {
+  background: #102641;
+  border: 1px solid #b58a2a;
+  border-radius: 13px;
+  padding: 25px;
+  transition: .25s;
+}
+
+.package:hover {
+  transform: translateY(-6px);
+  border-color: #ffda70;
+}
+
+.package.featured {
+  border: 2px solid #e8b93f;
+  background: #173452;
+}
+
+.package-name {
+  color: #f4ca58;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.package h3 {
+  margin: 12px 0;
+  font-size: 22px;
+}
+
+.price {
+  color: #f6cc59;
+  font-size: 30px;
+  font-weight: 900;
+  margin: 15px 0;
+}
+
+.package ul,
+.inclusions ul {
+  padding-left: 20px;
+  color: #d4deea;
+  margin: 20px 0;
+}
+
+.package li,
+.inclusions li {
+  margin-bottom: 9px;
+}
+
+.package-btn {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.services {
+  background: #0c2037;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 18px;
+  margin: 35px 0;
+}
+
+.service {
+  background: #142e4b;
+  border: 1px solid #9d7828;
+  border-radius: 10px;
+  padding: 25px 10px;
+  font-size: 27px;
+}
+
+.service h3 {
+  font-size: 16px;
+  margin-top: 12px;
+}
+
+.inclusions {
+  max-width: 700px;
+  margin: 40px auto 0;
+  background: #071629;
+  border: 1px solid #b58a2a;
+  border-radius: 12px;
+  padding: 28px;
+  text-align: left;
+}
+
+.inclusions h3 {
+  color: #f4ca58;
+}
+
+.contact {
+  text-align: center;
+  padding: 75px 20px;
+  background: linear-gradient(135deg, #132c48, #061326);
+}
+
+.contact p {
+  color: #c8d2df;
+  margin: 12px 0;
+}
+
+.contact .btn {
+  margin-top: 20px;
+}
+
+footer {
+  text-align: center;
+  background: #030d1b;
+  padding: 35px 15px;
+  border-top: 2px solid #c89a2c;
+}
+
+footer p {
+  color: #aab7c7;
+  margin-top: 8px;
+}
+
+@media (max-width: 600px) {
+  header {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  nav {
+    justify-content: center;
+    gap: 14px;
+  }
+
+  nav a {
+    font-size: 13px;
+  }
+
+  .hero {
+    min-height: 430px;
+    padding: 55px 7%;
+  }
+
+  .intro,
+  .section {
+    padding: 55px 6%;
+  }
+
+  .intro h2,
+  .section h2,
+  .contact h2 {
+    font-size: 26px;
+  }
+
+  .package-grid {
+    grid-template-columns: 1fr;
+  }
 }
